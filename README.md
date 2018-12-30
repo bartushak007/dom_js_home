@@ -1,2 +1,2 @@
 # dom_js_home
-[link](https://github.com/bartushak007/dom_js_home/settings)
+[link](https://bartushak007.github.io/dom_js_home/)
