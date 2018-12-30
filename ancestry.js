@@ -110,11 +110,16 @@ function createCardList(arr) {
     born = div.appendChild(document.createElement('p'));
     born.innerHTML = '( ' + arr[i]['born'] + ' - ' + arr[i]['died'] + ' )';
 
-    father = div.appendChild(document.createElement('h5'));
-    father.innerHTML = 'Father: ' + arr[i]['father'];
+    if(arr[i]['father']) {
+      father = div.appendChild(document.createElement('h5'));
+      father.innerHTML = 'Father: ' + arr[i]['father'];
+    }
 
-    mother = div.appendChild(document.createElement('h5'));
-    mother.innerHTML = 'Mother: ' + arr[i]['mother'];
+    if(arr[i]['mother']) {
+      mother = div.appendChild(document.createElement('h5'));
+       mother.innerHTML = 'Mother: ' + arr[i]['mother'];
+    }    
+    
     document.body.appendChild(div);
   }
 
