@@ -77,7 +77,7 @@ function paintCharacters(elem, arr) {
     }
   }
 
-  for (var i = 0; i < text.length; ) {
+  for (var i = 0; i < text.length;) {
     newElement.appendChild(document.createElement('span'));
     newElement.children[i].innerHTML = text[i];
     newElement.children[i].style.color = randomColor(arr);

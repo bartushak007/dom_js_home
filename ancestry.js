@@ -109,12 +109,12 @@ function createCardList(arr) {
     born = div.appendChild(document.createElement('p'));
     born.innerHTML = '( ' + arr[i]['born'] + ' - ' + arr[i]['died'] + ' )';
 
-    if(arr[i]['father']) {
+    if (arr[i]['father']) {
       father = div.appendChild(document.createElement('h5'));
       father.innerHTML = 'Father: ' + arr[i]['father'];
     }
 
-    if(arr[i]['mother']) {
+    if (arr[i]['mother']) {
       mother = div.appendChild(document.createElement('h5'));
       mother.innerHTML = 'Mother: ' + arr[i]['mother'];
     }    
@@ -138,11 +138,11 @@ function createCardList(arr) {
   name = div.appendChild(document.createElement('h2'));
   name.innerHTML = 'Statistical analysis';
 
-  bornAverage = div.appendChild(document.createElement('h5'));
-  if(averageCount < 2) {
+  bornAverage = div.appendChild(document.createElement('h5'));  
+  if (averageCount < 1) {
     bornAverage.innerHTML = 'Not specified';
   } else {    
-  bornAverage.innerHTML = 'Difference in age: ' + Math.floor(average / averageCount);
+    bornAverage.innerHTML = 'Difference in age: ' + Math.floor(average / averageCount);
   }  
 
   maleLife = div.appendChild(document.createElement('h5'));
