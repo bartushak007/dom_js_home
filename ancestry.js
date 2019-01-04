@@ -56,9 +56,7 @@ function createCardList(arr) {
    sex,
    born,
    father,
-   mother,
-   div,
-   name,
+   mother,   
    bornAverage,
    maleLife,
    femaleLife;
@@ -70,7 +68,8 @@ function createCardList(arr) {
 
       for (var j = 0; j < arr.length; j++) {
         if (arr[i]['name'] === arr[j]['mother']) {
-          current = arr[j]['born'] - arr[i]['born'];
+          console.log(arr[j]['born'] - arr[i]['born'] + arr[j]['name']);
+          current = +arr[j]['born'] - +arr[i]['born'];
           if (current > 0) {
             average += current;
             averageCount++;
@@ -117,7 +116,7 @@ function createCardList(arr) {
 
     if(arr[i]['mother']) {
       mother = div.appendChild(document.createElement('h5'));
-       mother.innerHTML = 'Mother: ' + arr[i]['mother'];
+      mother.innerHTML = 'Mother: ' + arr[i]['mother'];
     }    
     
     document.body.appendChild(div);
@@ -140,7 +139,11 @@ function createCardList(arr) {
   name.innerHTML = 'Statistical analysis';
 
   bornAverage = div.appendChild(document.createElement('h5'));
+  if(averageCount < 2) {
+    bornAverage.innerHTML = 'Not specified';
+  } else {    
   bornAverage.innerHTML = 'Difference in age: ' + Math.floor(average / averageCount);
+  }  
 
   maleLife = div.appendChild(document.createElement('h5'));
   maleLife.innerHTML = 'Average male life: ' + Math.floor(averageMaleLife / maleCount);

@@ -4,7 +4,7 @@ createSpanInBlockByID('hello');
 createSpanInBlockByID('hello');
 createCloneNode(document.getElementsByClassName('cloned__div')[0]);
 addChildrenTo('ul', 5, 'li');
-replaceElementBy(document.getElementById('table'), document.getElementsByClassName('cloned__div')[1]);
+replaceElementBy('newElement', 'oldElement');
 paintCharacters(document.getElementById('textNode'), ['#00ff00', '#66ccff', '#ffff66', '#ff00ff', '#ff3300', '#999966', '#003300']);
 
 function getAttributes() {
@@ -53,8 +53,10 @@ function addChildrenTo(block, count, type) {
 }
 
 function replaceElementBy(blockCurrent, blockToReplace) {
-  var cloneBlock = blockCurrent.cloneNode(true);
-  document.body.replaceChild(cloneBlock, blockToReplace);
+  var newBlock = document.getElementById(blockCurrent);
+  var replaceBlock = document.getElementById(blockToReplace);
+  var cloneBlock = newBlock.cloneNode(true);  
+  replaceBlock.parentNode.replaceChild(cloneBlock, replaceBlock);
 }
 
 function paintCharacters(elem, arr) {
